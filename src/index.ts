@@ -20,6 +20,7 @@ import SetRefPropPlugin from '@alilc/lowcode-plugin-set-ref-prop';
 import LogoSamplePlugin from './plugins/plugin-logo-sample';
 import SimulatorLocalePlugin from './plugins/plugin-simulator-locale';
 import lowcodePlugin from './plugins/plugin-lowcode-component';
+import DemoPlugin from './plugins/plugin-demo';
 import appHelper from './appHelper';
 import './global.scss';
 
@@ -47,6 +48,9 @@ async function registerPlugins() {
     },
   });
 
+  // demo 插件
+  await plugins.register(DemoPlugin);
+
   // 设置内置 setter 和事件绑定、插件绑定面板
   await plugins.register(DefaultSettersRegistryPlugin);
 
@@ -69,6 +73,7 @@ async function registerPlugins() {
   await plugins.register(SimulatorResizerPlugin);
 
   await plugins.register(LoadIncrementalAssetsWidgetPlugin);
+
 
   // 插件参数声明 & 传递，参考：https://lowcode-engine.cn/site/docs/api/plugins#%E8%AE%BE%E7%BD%AE%E6%8F%92%E4%BB%B6%E5%8F%82%E6%95%B0%E7%89%88%E6%9C%AC%E7%A4%BA%E4%BE%8B
   await plugins.register(DataSourcePanePlugin, {
