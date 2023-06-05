@@ -1,0 +1,414 @@
+{
+  "version": "1.0.0",
+  "componentsMap": [
+  ],
+  "componentsTree": [
+    {
+      "componentName": "Page",
+      "id": "node_dockcviv8fo1",
+      "props": {
+        "ref": "outerView",
+        "style": {
+          "height": "100%"
+        }
+      },
+      "docId": "doclaqkk3b9",
+      "fileName": "/",
+      "dataSource": {
+        "list": [
+          {
+            "type": "fetch",
+            "isInit": true,
+            "options": {
+              "params": {},
+              "method": "GET",
+              "isCors": true,
+              "timeout": 5000,
+              "headers": {},
+              "uri": "mock/info.json"
+            },
+            "id": "info",
+            "shouldFetch": {
+              "type": "JSFunction",
+              "value": "function() { \n  console.log('should fetch.....');\n  return true; \n}"
+            }
+          }
+        ]
+      },
+      "state": {
+        "text": {
+          "type": "JSExpression",
+          "value": "\"outer\""
+        },
+        "isShowDialog": {
+          "type": "JSExpression",
+          "value": "false"
+        }
+      },
+      "css": "body {\n  font-size: 12px;\n}\n\n.button {\n  width: 100px;\n  color: #ff00ff\n}",
+      "lifeCycles": {
+        "componentDidMount": {
+          "type": "JSFunction",
+          "value": "function componentDidMount() {\n  console.log('did mount');\n}",
+          "source": "function componentDidMount() {\n  console.log('did mount');\n}"
+        },
+        "componentWillUnmount": {
+          "type": "JSFunction",
+          "value": "function componentWillUnmount() {\n  console.log('will unmount');\n}",
+          "source": "function componentWillUnmount() {\n  console.log('will unmount');\n}"
+        }
+      },
+      "methods": {
+        "testFunc": {
+          "type": "JSFunction",
+          "value": "function testFunc() {\n  console.log('test func');\n}",
+          "source": "function testFunc() {\n  console.log('test func');\n}"
+        },
+        "onClick": {
+          "type": "JSFunction",
+          "value": "function onClick() {\n  this.setState({\n    isShowDialog: true\n  });\n}",
+          "source": "function onClick() {\n  this.setState({\n    isShowDialog: true\n  });\n}"
+        },
+        "closeDialog": {
+          "type": "JSFunction",
+          "value": "function closeDialog() {\n  this.setState({\n    isShowDialog: false\n  });\n}",
+          "source": "function closeDialog() {\n  this.setState({\n    isShowDialog: false\n  });\n}"
+        },
+        "getHelloWorldText": {
+          "type": "JSFunction",
+          "value": "function getHelloWorldText() {\n  return this.i18n('i18n-jwg27yo4');\n}",
+          "source": "function getHelloWorldText() {\n  return this.i18n('i18n-jwg27yo4');\n}"
+        },
+        "getHelloWorldText2": {
+          "type": "JSFunction",
+          "value": "function getHelloWorldText2() {\n  return this.i18n('i18n-jwg27yo3', {\n    name: '絮黎'\n  });\n}",
+          "source": "function getHelloWorldText2() {\n  return this.i18n('i18n-jwg27yo3', {\n    name: '絮黎'\n  });\n}"
+        },
+        "onTestConstantsButtonClicked": {
+          "type": "JSFunction",
+          "value": "function onTestConstantsButtonClicked() {\n  console.log('constants.ConstantA:', this.constants.ConstantA);\n  console.log('constants.ConstantB:', this.constants.ConstantB);\n}",
+          "source": "function onTestConstantsButtonClicked() {\n  console.log('constants.ConstantA:', this.constants.ConstantA);\n  console.log('constants.ConstantB:', this.constants.ConstantB);\n}"
+        },
+        "onTestUtilsButtonClicked": {
+          "type": "JSFunction",
+          "value": "function onTestUtilsButtonClicked() {\n  this.utils.demoUtil('param1', 'param2');\n}",
+          "source": "function onTestUtilsButtonClicked() {\n  this.utils.demoUtil('param1', 'param2');\n}"
+        }
+      },
+      "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    });\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    });\n  }\n  getHelloWorldText() {\n    return this.i18n('i18n-jwg27yo4');\n  }\n  getHelloWorldText2() {\n    return this.i18n('i18n-jwg27yo3', {\n      name: '絮黎',\n    });\n  }\n  onTestConstantsButtonClicked() {\n    console.log('constants.ConstantA:', this.constants.ConstantA);\n    console.log('constants.ConstantB:', this.constants.ConstantB);\n\t}\n\tonTestUtilsButtonClicked(){\n    this.utils.demoUtil('param1', 'param2');\n\t}\n}",
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": "",
+      "children": [
+        {
+          "componentName": "StepForm",
+          "id": "node_ocliifv99mk1",
+          "props": {
+            "current": 0,
+            "operations": [
+              {
+                "content": "上一步",
+                "action": "previous",
+                "type": "secondary"
+              },
+              {
+                "content": "下一步",
+                "action": "next",
+                "type": "primary"
+              }
+            ],
+            "animation": true,
+            "labelPlacement": "ver"
+          },
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": "",
+          "children": [
+            {
+              "componentName": "ProForm",
+              "id": "node_ocliifv99mkd",
+              "props": {
+                "columns": 1,
+                "primaryKey": "node_ocliifv99mk2",
+                "stepItemProps": {
+                  "title": "选择续费工作室",
+                  "primaryKey": "node_ocliifv99mk2"
+                },
+                "ref": "pro-form-entryliifvgrb",
+                "size": "medium",
+                "device": "desktop",
+                "status": "editable",
+                "isPreview": false,
+                "labelAlign": "top",
+                "labelCol": {
+                  "fixedSpan": 0
+                },
+                "operationConfig": {
+                  "showSaveTime": false
+                },
+                "labelTextAlign": "right"
+              },
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "loopArgs": [
+                "",
+                ""
+              ],
+              "children": [
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliig2id87",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "5143",
+                      "label": "支付方式",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true,
+                      "required": false,
+                      "labelTextAlign": "right"
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliig2id88",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "7994",
+                      "label": "服务期限",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliig2id89",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "2985",
+                      "label": "单价",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "ProForm",
+              "id": "node_ocliifv99mkh",
+              "props": {
+                "columns": 1,
+                "primaryKey": "node_ocliifv99mk6",
+                "stepItemProps": {
+                  "title": "续费方式",
+                  "primaryKey": "node_ocliifv99mk6"
+                }
+              },
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliifv99mki",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "6952",
+                      "label": "表单项",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliifv99mkj",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "4330",
+                      "label": "表单项",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliifv99mkk",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "3981",
+                      "label": "表单项",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "ProForm",
+              "id": "node_ocliifv99mkl",
+              "props": {
+                "columns": 1,
+                "primaryKey": "4740",
+                "stepItemProps": {
+                  "primaryKey": "4740",
+                  "title": "确认续费"
+                }
+              },
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliifv99mkm",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "8285",
+                      "label": "表单项",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliifv99mkn",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "4380",
+                      "label": "表单项",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "FormInput",
+                  "id": "node_ocliifv99mko",
+                  "props": {
+                    "formItemProps": {
+                      "primaryKey": "8832",
+                      "label": "表单项",
+                      "size": "medium",
+                      "device": "desktop",
+                      "fullWidth": true
+                    },
+                    "placeholder": "请输入"
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "componentName": "FDPage",
+          "id": "node_oclfjpfqjy5",
+          "props": {
+            "contentProps": {
+              "style": {
+                "background": "rgba(255,255,255,0)"
+              }
+            },
+            "ref": "fdpage-bb43fbb0"
+          },
+          "title": "页面",
+          "hidden": false,
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": "",
+          "loopArgs": [
+            "",
+            ""
+          ]
+        }
+      ]
+    }
+  ],
+  "i18n": {
+    "zh-CN": {
+      "i18n-jwg27yo4": "你好 ",
+      "i18n-jwg27yo3": "{name} 博士"
+    },
+    "en-US": {
+      "i18n-jwg27yo4": "Hello ",
+      "i18n-jwg27yo3": "Doctor {name}"
+    }
+  }
+}

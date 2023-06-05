@@ -1,3 +1,7 @@
+## 自定义组件的npm地址：https://www.npmjs.com/package/xb-lowcode-component?activeTab=code
+1、找到：/build/lowcode/assets-prop.json
+2、打开文件后将package和components的内容复制到src/services/assets.json中，相当于两个文件merge合并
+
 ### 资产包assets.json解读
 1、package：用来做组件渲染，拿到组件实例去用的
   （1）定义的是组件的资源以及组件所依赖的其他资源，这些内容都会在引擎里面提前把他加载好，这样的话就可以通过window去拿到这些组件的实例；
