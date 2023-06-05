@@ -4,6 +4,7 @@ import { Loading } from '@alifd/next';
 import mergeWith from 'lodash/mergeWith';
 import isArray from 'lodash/isArray';
 import { buildComponents, assetBundle, AssetLevel, AssetLoader } from '@alilc/lowcode-utils';
+// 引擎的渲染模块
 import ReactRenderer from '@alilc/lowcode-react-renderer';
 import { injectComponents } from '@alilc/lowcode-plugin-inject';
 import appHelper from './appHelper';
@@ -80,7 +81,10 @@ const SamplePreview = () => {
       return objValue.concat(srcValue || []);
     }
   }
-
+  /**
+   * components：组件  是schema里面用到的哪些组件的实例，涉及到《低代码引擎搭建协议规范》
+   * 我们需要用到这个组件，那我怎么知道我们页面里面用到哪些组件？这个时候就涉及到《低代码引擎资产包协议规范》（可以直接看assets.json文件（Readme.md文件有对这个文件的解析）
+  */
   return (
     <div className="lowcode-plugin-sample-preview">
       <ReactRenderer
