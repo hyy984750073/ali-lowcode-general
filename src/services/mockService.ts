@@ -4,6 +4,7 @@ import { Message, Dialog } from '@alifd/next';
 import { IPublicTypeProjectSchema, IPublicEnumTransformStage } from '@alilc/lowcode-types';
 import DefaultPageSchema from './defaultPageSchema.json';
 import DefaultI18nSchema from './defaultI18nSchema.json';
+import { getSearchParam } from '../utils/getUrlParams'
 
 const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypeProjectSchema => {
   return {
@@ -13,6 +14,8 @@ const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypePro
     i18n: i18nSchema,
   };
 }
+
+const currentPage:string = getSearchParam('page') || 'home'
 
 
 export const saveSchema = async (scenarioName: string = 'unknown') => {
@@ -47,14 +50,14 @@ export const resetSchema = async (scenarioName: string = 'unknown') => {
   Message.success('成功重置页面');
 }
 
-const getLSName = (scenarioName: string, ns: string = 'projectSchema') => `${scenarioName}:${ns}`;
+const getLSName = (scenarioName: string, currentPage: string = 'home', ns: string = 'projectSchema') => `${scenarioName}:${currentPage}:${ns}`;
 
 export const getProjectSchemaFromLocalStorage = (scenarioName: string) => {
   if (!scenarioName) {
     console.error('scenarioName is required!');
     return;
   }
-  const localValue = window.localStorage.getItem(getLSName(scenarioName));
+  const localValue = window.localStorage.getItem(getLSName(scenarioName, currentPage));
   if (localValue) {
     return JSON.parse(localValue);
   }
@@ -67,7 +70,7 @@ const setProjectSchemaToLocalStorage = (scenarioName: string) => {
     return;
   }
   window.localStorage.setItem(
-    getLSName(scenarioName),
+    getLSName(scenarioName, currentPage),
     JSON.stringify(project.exportSchema(IPublicEnumTransformStage.Save))
   );
 }
@@ -79,7 +82,7 @@ const setPackagesToLocalStorage = async (scenarioName: string) => {
   }
   const packages = await filterPackages(material.getAssets().packages);
   window.localStorage.setItem(
-    getLSName(scenarioName, 'packages'),
+    getLSName(scenarioName, currentPage,  'packages'),
     JSON.stringify(packages),
   );
 }
@@ -89,7 +92,7 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
     console.error('scenarioName is required!');
     return;
   }
-  return JSON.parse(window.localStorage.getItem(getLSName(scenarioName, 'packages')) || '{}');
+  return JSON.parse(window.localStorage.getItem(getLSName(scenarioName, currentPage, 'packages')) || '{}');
 }
 
 export const getProjectSchema = async (scenarioName: string = 'unknown') : Promise<IPublicTypeProjectSchema> => {
@@ -107,12 +110,12 @@ export const getPageSchema = async (scenarioName: string = 'unknown') => {
 };
 
 export const getPreviewLocale = (scenarioName: string) => {
-  const key = getLSName(scenarioName, 'previewLocale');
+  const key = getLSName(scenarioName, currentPage, 'previewLocale');
   return window.localStorage.getItem(key) || 'zh-CN';
 }
 
 export const setPreviewLocale = (scenarioName: string, locale: string) => {
-  const key = getLSName(scenarioName, 'previewLocale');
+  const key = getLSName(scenarioName, currentPage,  'previewLocale');
   window.localStorage.setItem(key, locale || 'zh-CN');
   window.location.reload();
 }

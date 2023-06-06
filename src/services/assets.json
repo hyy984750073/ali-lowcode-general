@@ -77,19 +77,19 @@
     {
       "package": "xb-lowcode-component",
       "version": "0.1.0",
-      "library": "BizComps",
+      "library": "XbComps",
       "urls": [
-        "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/render/default/view.js",
-        "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/render/default/view.css"
+        "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/render/default/view.js",
+        "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/render/default/view.css"
       ],
       "editUrls": [
-        "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/view.js",
-        "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/view.css"
+        "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/view.js",
+        "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/view.css"
       ],
       "advancedUrls": {
         "default": [
-          "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/render/default/view.js",
-          "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/render/default/view.css"
+          "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/render/default/view.js",
+          "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/render/default/view.css"
         ]
       },
       "advancedEditUrls": {}
@@ -135,13 +135,13 @@
         "package": "xb-lowcode-component",
         "version": "0.1.0"
       },
-      "url": "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/meta.js",
+      "url": "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/meta.js",
       "urls": {
-        "default": "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/meta.js"
+        "default": "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/meta.js"
       },
       "advancedUrls": {
         "default": [
-          "https://unpkg.com/xb-lowcode-component@0.1.0/build/lowcode/meta.js"
+          "http://127.0.0.1:5501/xb-lowcode-component/build/lowcode/meta.js"
         ]
       }
     }
