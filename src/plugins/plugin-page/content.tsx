@@ -17,7 +17,8 @@ interface RouteItem {
 const ContentPane =  () => {
   let pageList:Array<RouteItem> = window.localStorage.getItem('pageList') ? JSON.parse(window.localStorage.getItem('pageList') || '') : [
     {key: 'home', path: '', name: '首页', icon: ''},
-    {key: 'login', path: '', name: '登录页', icon: ''}
+    {key: 'login', path: '', name: '登录页', icon: ''},
+    {key: 'list', path: '', name: '工作室审核', icon: ''},
   ]
   const [visible, setVisible] = useState(false);
   const [itemList, setItemList] = useState(pageList);
@@ -34,15 +35,11 @@ const ContentPane =  () => {
 
   const addPage = async (values:RouteItem) => {
     console.log(values)
-    setItemList([...itemList, values])
+    window.localStorage.setItem('pageList', JSON.stringify([...itemList, values]));
+    await setItemList([...itemList, values])
 
     setVisible(false)
-
-    savePageToLocalStorage()
-  }
-
-  const savePageToLocalStorage = () => {
-    window.localStorage.setItem('pageList', JSON.stringify(itemList));
+    location.href = `/?page=${values['key']}`
   }
 
 
@@ -55,7 +52,7 @@ const ContentPane =  () => {
           })
         }
       </Nav>
-      <Button className='add-page-btn' onClick={() => setVisible(true)}>新增页面</Button>
+      <Button className='add-page-btn' type='primary' onClick={() => setVisible(true)}>新增页面</Button>
       <Dialog
         title="新增页面"
         visible={visible}
@@ -63,7 +60,6 @@ const ContentPane =  () => {
         footer={false}
         onClose={() => setVisible(false)}
         onCancel={() => setVisible(false)}
-        onOk={addPage}
       >
         <Form style={{ width: "375px" }} >
           <FormItem
@@ -82,19 +78,13 @@ const ContentPane =  () => {
           >
             <Input name="name" />
           </FormItem>
-          <FormItem
-            name="path"
-            label="path"
-          >
+          <FormItem name="path" label="path">
             <Input  />
           </FormItem>
-          <FormItem
-            name="icon"
-            label="icon"
-          >
+          <FormItem name="icon" label="icon">
             <Input />
           </FormItem>
-          <FormItem label=" " colon={false}>
+          <FormItem label=" " colon={false} className='submit-add-page-btn'>
             <Form.Reset>重置</Form.Reset>
             <Form.Submit
               type="primary"

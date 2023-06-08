@@ -1,4 +1,10 @@
 .add-page-btn{
-  margin-left: 21px;
-  margin-bottom: 12px;
+  margin: 24px 21px;
+}
+
+.submit-add-page-btn{
+  text-align: center;
+  .next-btn:not(:last-child){
+    margin-right: 15px;
+  }
 }

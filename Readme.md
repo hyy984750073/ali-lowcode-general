@@ -1,4 +1,5 @@
 ## 自定义组件的npm地址：https://www.npmjs.com/package/xb-lowcode-component?activeTab=code
+(https://unpkg.com/browse/xb-lowcode-component@0.1.0/)
 1、找到：/build/lowcode/assets-prop.json
 2、打开文件后将package和components的内容复制到src/services/assets.json中，相当于两个文件merge合并
 

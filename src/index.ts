@@ -20,7 +20,7 @@ import SetRefPropPlugin from '@alilc/lowcode-plugin-set-ref-prop';
 import LogoSamplePlugin from './plugins/plugin-logo-sample';
 import SimulatorLocalePlugin from './plugins/plugin-simulator-locale';
 import lowcodePlugin from './plugins/plugin-lowcode-component';
-import DemoPlugin from './plugins/plugin-demo';
+// import DemoPlugin from './plugins/plugin-demo';
 import PagePlugin from './plugins/plugin-page';
 import appHelper from './appHelper';
 import './global.scss';
@@ -58,7 +58,7 @@ async function registerPlugins() {
 
   await plugins.register(ComponentPanelPlugin);
   // demo 插件
-  await plugins.register(DemoPlugin);
+  // await plugins.register(DemoPlugin);
 
   await plugins.register(SchemaPlugin, { isProjectSchema: true });
 
