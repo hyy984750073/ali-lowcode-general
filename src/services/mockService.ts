@@ -92,6 +92,7 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
     console.error('scenarioName is required!');
     return;
   }
+  console.log(currentPage)
   return JSON.parse(window.localStorage.getItem(getLSName(scenarioName, currentPage, 'packages')) || '{}');
 }
 

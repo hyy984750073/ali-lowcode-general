@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Nav, Button, Dialog, Form, Input } from '@alifd/next';
 import { getSearchParam } from '../../utils/getUrlParams'
+// import { getProjectSchemaFromLocalStorage, getPackagesFromLocalStorage } from '../../services/mockService';
 import './index.scss';
 
 const { Item, SubNav } = Nav;
@@ -31,6 +32,7 @@ const ContentPane =  () => {
     // console.log(item)
     // location.href = `/${location.pathname}?page=${extra['key']}`
     location.href = `/?page=${extra['key']}`
+    // getProjectSchemaFromLocalStorage(extra['key'])
   }
 
   const addPage = async (values:RouteItem) => {
