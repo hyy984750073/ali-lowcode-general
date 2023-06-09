@@ -16,11 +16,7 @@ interface RouteItem {
 }
 
 const ContentPane =  () => {
-  let pageList:Array<RouteItem> = window.localStorage.getItem('pageList') ? JSON.parse(window.localStorage.getItem('pageList') || '') : [
-    {key: 'login', path: '', name: '登录页', icon: ''},
-    {key: 'home', path: '', name: '首页', icon: ''},
-    {key: 'list', path: '', name: '工作室审核', icon: ''},
-  ]
+  let pageList:Array<RouteItem> = window.localStorage.getItem('pageList') ? JSON.parse(window.localStorage.getItem('pageList') || '') : []
   const [visible, setVisible] = useState(false);
   const [itemList, setItemList] = useState(pageList);
 

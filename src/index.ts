@@ -18,7 +18,7 @@ import PreviewSamplePlugin from './plugins/plugin-preview-sample';
 import CustomSetterSamplePlugin from './plugins/plugin-custom-setter-sample';
 import SetRefPropPlugin from '@alilc/lowcode-plugin-set-ref-prop';
 import LogoSamplePlugin from './plugins/plugin-logo-sample';
-import SimulatorLocalePlugin from './plugins/plugin-simulator-locale';
+// import SimulatorLocalePlugin from './plugins/plugin-simulator-locale';
 import lowcodePlugin from './plugins/plugin-lowcode-component';
 // import DemoPlugin from './plugins/plugin-demo';
 import PagePlugin from './plugins/plugin-page';
@@ -102,7 +102,7 @@ async function registerPlugins() {
   await plugins.register(CustomSetterSamplePlugin);
 
   // 设计器区域多语言切换
-  await plugins.register(SimulatorLocalePlugin);
+  // await plugins.register(SimulatorLocalePlugin);
 
   await plugins.register(lowcodePlugin);
 };
