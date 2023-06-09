@@ -17,6 +17,7 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
+import { getSearchParam } from './utils/getUrlParams';
 
 const basePath = '/preview.html'
 
@@ -96,7 +97,7 @@ const SamplePreview = () => {
    * 我们需要用到这个组件，那我怎么知道我们页面里面用到哪些组件？这个时候就涉及到《低代码引擎资产包协议规范》（可以直接看assets.json文件（Readme.md文件有对这个文件的解析）
   */
   const itemList = window.localStorage.getItem('pageList') ? JSON.parse(window.localStorage.getItem('pageList') || '') : []
-  const defaultCurrentPage = 'home'
+  const defaultCurrentPage = getSearchParam('page');
   console.log(itemList)
   return (
     <div className="lowcode-plugin-sample-preview">
@@ -110,7 +111,8 @@ const SamplePreview = () => {
           {
             itemList.length?itemList.map((item: any) => {
               return (<Item icon={item.icon || 'account'} key={item.key}>
-                <Link to={`${basePath}/${item.key}`}>{item.name}</Link>
+                {/* <Link to={`${basePath}?page=${item.key}`}>{item.name}</Link> */}
+                <a href={`${basePath}?page=${item.key}&scenarioName=general`}>{item.name}</a>
               </Item>)
             }):null
           }
@@ -118,7 +120,7 @@ const SamplePreview = () => {
         </Shell.Navigation>
 
         <Shell.Content>
-          {/* <ReactRenderer
+          <ReactRenderer
             className="lowcode-plugin-sample-preview-content"
             schema={{
               ...schema,
@@ -128,8 +130,7 @@ const SamplePreview = () => {
             locale={currentLocale}
             messages={i18n}
             appHelper={appHelper}
-          /> */}
-          <div>123456</div>
+          />
         </Shell.Content>
       </Shell>
     </div>
