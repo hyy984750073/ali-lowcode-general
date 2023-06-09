@@ -104,7 +104,7 @@ const SamplePreview = () => {
       <Shell className={"iframe-hack"} style={{ border: "1px solid #eee" }}>
         <Shell.Action>
           <Icon type="ic_tongzhi" />
-          <span style={{ marginLeft: 10 }}>MyName</span>
+          {/* <span style={{ marginLeft: 10 }}>MyName</span> */}
         </Shell.Action>
         <Shell.Navigation>
           <Nav type="line" selectedKeys={[defaultCurrentPage]}>

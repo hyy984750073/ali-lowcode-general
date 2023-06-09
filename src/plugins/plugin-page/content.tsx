@@ -17,8 +17,8 @@ interface RouteItem {
 
 const ContentPane =  () => {
   let pageList:Array<RouteItem> = window.localStorage.getItem('pageList') ? JSON.parse(window.localStorage.getItem('pageList') || '') : [
-    {key: 'home', path: '', name: '首页', icon: ''},
     {key: 'login', path: '', name: '登录页', icon: ''},
+    {key: 'home', path: '', name: '首页', icon: ''},
     {key: 'list', path: '', name: '工作室审核', icon: ''},
   ]
   const [visible, setVisible] = useState(false);
@@ -28,11 +28,7 @@ const ContentPane =  () => {
   const defaultCurrentPage = getSearchParam('page');
 
   const onSelect = (selectedKeys: Array, item: Object, extra: Object) => {
-    // console.log(selectedKeys)
-    // console.log(item)
-    // location.href = `/${location.pathname}?page=${extra['key']}`
     location.href = `/?page=${extra['key']}`
-    // getProjectSchemaFromLocalStorage(extra['key'])
   }
 
   const addPage = async (values:RouteItem) => {
@@ -49,9 +45,9 @@ const ContentPane =  () => {
     <>
       <Nav type="line" selectedKeys={[defaultCurrentPage]} onSelect={onSelect}>
         {
-          itemList.map((item: RouteItem) => {
+          itemList.length ? itemList.map((item: RouteItem) => {
             return <Item icon={item.icon || 'account'} key={item.key}>{item.name}</Item>
-          })
+          }) : null
         }
       </Nav>
       <Button className='add-page-btn' type='primary' onClick={() => setVisible(true)}>新增页面</Button>
@@ -81,10 +77,10 @@ const ContentPane =  () => {
             <Input name="name" />
           </FormItem>
           <FormItem name="path" label="path">
-            <Input  />
+            <Input name="path"  />
           </FormItem>
           <FormItem name="icon" label="icon">
-            <Input />
+            <Input name="icon" />
           </FormItem>
           <FormItem label=" " colon={false} className='submit-add-page-btn'>
             <Form.Reset>重置</Form.Reset>
