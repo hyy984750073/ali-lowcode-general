@@ -98,7 +98,6 @@ const SamplePreview = () => {
   */
   const itemList = window.localStorage.getItem('pageList') ? JSON.parse(window.localStorage.getItem('pageList') || '') : []
   const defaultCurrentPage = getSearchParam('page');
-  console.log(itemList)
   return (
     <div className="lowcode-plugin-sample-preview">
       <Shell className={"iframe-hack"} style={{ border: "1px solid #eee" }}>
