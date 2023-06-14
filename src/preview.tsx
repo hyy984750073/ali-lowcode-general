@@ -11,12 +11,12 @@ import appHelper from './appHelper';
 import { getProjectSchemaFromLocalStorage, getPackagesFromLocalStorage, getPreviewLocale, setPreviewLocale } from './services/mockService';
 import { Search, Icon, Nav, Shell } from '@alifd/next';
 const { SubNav, Item, Group } = Nav;
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Routes,
+//   Link,
+// } from "react-router-dom";
 import { getSearchParam } from './utils/getUrlParams';
 
 const basePath = '/preview.html'
@@ -135,9 +135,10 @@ const SamplePreview = () => {
     </div>
   );
 };
+// ReactDOM.render(<Router>
+//   <Routes>
+//     <Route path={basePath} element={<SamplePreview />}></Route>
+//   </Routes>
+// </Router>, document.getElementById('ice-container'));
 
-ReactDOM.render(<Router>
-  <Routes>
-    <Route path={basePath} element={<SamplePreview />}></Route>
-  </Routes>
-</Router>, document.getElementById('ice-container'));
+ReactDOM.render(<SamplePreview />, document.getElementById('ice-container'));

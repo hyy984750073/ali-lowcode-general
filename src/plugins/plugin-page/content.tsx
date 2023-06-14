@@ -24,7 +24,7 @@ const ContentPane =  () => {
   const defaultCurrentPage = getSearchParam('page');
 
   const onSelect = (selectedKeys: Array, item: Object, extra: Object) => {
-    location.href = `/?page=${extra['key']}`
+    location.href = `./?page=${extra['key']}`
   }
 
   const addPage = async (values:RouteItem) => {
@@ -33,7 +33,7 @@ const ContentPane =  () => {
     await setItemList([...itemList, values])
 
     setVisible(false)
-    location.href = `/?page=${values['key']}`
+    location.href = `./?page=${values['key']}`
   }
 
 
